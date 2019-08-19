@@ -51,6 +51,9 @@ public class ConfigFromConf {
     @InjectConfig
     private Optional<Integer> emptyInteger;
 
+    @InjectConfig
+    private boolean aBoolean;
+
     @InjectConfig("complexEntries")
     private ServiceConfiguration config;
 
@@ -67,6 +70,7 @@ public class ConfigFromConf {
         assertThat(aInteger, is(44));
         assertThat(aOptionalInteger, is(Optional.of(423)));
         assertThat(emptyInteger, is(Optional.empty()));
+        assertThat(aBoolean, is(false));
 
         assertThat(aIntList, notNullValue());
         assertThat(aIntList.get(0), is(67));

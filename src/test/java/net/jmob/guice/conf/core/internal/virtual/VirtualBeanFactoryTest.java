@@ -52,6 +52,8 @@ public class VirtualBeanFactoryTest {
 
     private Integer field;
 
+    private Boolean aBoolean;
+
     private InterfaceTypedForTest interfaceField;
 
     private Optional<Integer> optional;
@@ -75,7 +77,24 @@ public class VirtualBeanFactoryTest {
         assertThat(value, is(111));
     }
 
-    @Test
+//    @Test
+//    public void nominal2() throws NoSuchFieldException {
+//        when(config.getAnyRef("test2")).thenReturn(true);
+//        Field field2 = this.getClass().getDeclaredField("aBoolean");
+//        VirtualBeanFactory virtualBeanFactory2 = new VirtualBeanFactory(beanValidator)
+//                .withConfig(config)
+//                .withField(field2)
+//                .withPath("test2")
+//                .withType(Boolean.class);
+//
+//        Object value2 = virtualBeanFactory2.buildValue();
+//
+//        assertThat(virtualBeanFactory2.getField(), is(field2));
+//        assertThat(value2, instanceOf(Boolean.class));
+//        assertThat(value2, is(true));
+//    }
+
+        @Test
     public void optional() throws NoSuchFieldException {
         VirtualBeanFactory virtualBeanFactory = new VirtualBeanFactory(beanValidator)
                 .withConfig(config)

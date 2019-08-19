@@ -100,6 +100,9 @@ public class ConfigurationListenerTest {
     public static class ConfiguredClass {
         @InjectConfig
         private Optional<String> p1;
+
+        @InjectConfig
+        private boolean p2;
     }
 
     private static class Extends extends ConfiguredClass {
